@@ -3,7 +3,7 @@ Building & providing RPM binary packages for Apache Kudu on CentOS 7.
 
 # Installation of Apache Kudu
 ## Download
-The latest RPM package are available from [the download page](https://github.com/MartinWeindel/kudu-rpm/wiki/Download).
+The latest RPM package is available from the [download page](https://github.com/MartinWeindel/kudu-rpm/wiki/Download).
 
 ## Prerequisites
 - CentOS 7
