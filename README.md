@@ -33,6 +33,7 @@ yum install kudu-1.6.0-1.x86_64.rpm
 
 ### Running master server as service
 - for multi master installations configure `--master_addresses` in `/etc/kudu/conf/master.gflagfile`
+- more details see [Apache Kudu Configuration](http://kudu.apache.org/docs/configuration.html)
 - starting the master server
 ```
 systemctl start kudu-master
@@ -41,6 +42,7 @@ systemctl enable kudu-master
 
 ### Running tablet server as service
 - if master runs on other machine(s), configure `tserver_master_addrs` in `/etc/kudu/conf/tserver.gflagfile`
+- more details see [Apache Kudu Configuration](http://kudu.apache.org/docs/configuration.html)
 - starting the tablet server
 ```
 systemctl start kudu-tserver
