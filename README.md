@@ -22,7 +22,13 @@ line to `/etc/kudu/conf/master.gflagfile` and `/etc/kudu/conf/tserver.gflagfile`
 
 ### Installation of RPM package
 ```
-yum install kudu-1.5.0-1.x86_64.rpm
+yum install kudu-1.6.0-1.x86_64.rpm
+```
+
+### Updating from older version
+```
+yum erase kudu
+yum install kudu-1.6.0-1.x86_64.rpm
 ```
 
 ### Running master server as service
@@ -49,4 +55,9 @@ After checking out this project, just run
 ```
 ./extract-rpms.sh
 ```
+
+## Updating to new version
+- build docker image `usuresearch/apache-kudu`
+- adjust versions in `README.md`, `extract-rpms.sh`, `Dockerfile`, and `spec/header`
+- commit and release
 
