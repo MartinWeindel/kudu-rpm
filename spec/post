@@ -1,0 +1,22 @@
+%post
+
+# add kudu user
+id -u kudu &>/dev/null || useradd kudu --user-group --system
+
+# prepare directories
+if [ ! -d /var/lib/kudu ]; then
+  mkdir -p /var/lib/kudu
+  chown kudu:kudu /var/lib/kudu
+fi
+
+if [ ! -d /var/log/kudu ]; then
+  mkdir -p /var/log/kudu
+  chown kudu:kudu /var/log/kudu
+fi
+
+if [ ! -d /etc/kudu/conf ]; then
+  if [ -d /etc/kudu/conf.dist ]; then
+    cp -R /etc/kudu/conf.dist /etc/kudu/conf
+  fi
+fi
+

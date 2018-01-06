@@ -1,0 +1,14 @@
+##Comma separated addresses of the masters which the tablet server should connect to.
+--tserver_master_addrs=127.0.0.1:7051
+
+--log_dir=/var/log/kudu
+--fs_wal_dir=/var/lib/kudu/tserver
+--fs_data_dirs=/var/lib/kudu/tserver
+
+## You can avoid the dependency on ntpd by running Kudu with --use-hybrid-clock=false
+## This is not recommended for production environment.
+## NOTE: If you run without hybrid time the tablet history GC will not work. 
+## Therefore when you delete or update a row the history of that data will be kept 
+## forever. Eventually you may run out of disk space. 
+#--use_hybrid_clock=false
+

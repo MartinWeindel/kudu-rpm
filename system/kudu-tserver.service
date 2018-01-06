@@ -1,0 +1,14 @@
+[Unit]
+Description=Apache Kudu Tablet Server
+Documentation=http://kudu.apache.org
+
+[Service]
+Environment=KUDU_HOME=/usr/lib/kudu
+ExecStart=/usr/lib/kudu/sbin/kudu-tserver --flagfile=/etc/kudu/conf/tserver.gflagfile
+TimeoutStopSec=5
+Restart=on-failure
+User=kudu
+
+[Install]
+WantedBy=multi-user.target
+

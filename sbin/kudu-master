@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export KUDU_HOME=${KUDU_HOME:-/usr/lib/kudu}
+
+exec ${KUDU_HOME}/sbin/kudu-master "$@"

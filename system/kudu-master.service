@@ -1,0 +1,14 @@
+[Unit]
+Description=Apache Kudu Master Server
+Documentation=http://kudu.apache.org
+
+[Service]
+Environment=KUDU_HOME=/usr/lib/kudu
+ExecStart=/usr/lib/kudu/sbin/kudu-master --flagfile=/etc/kudu/conf/master.gflagfile
+TimeoutStopSec=5
+Restart=on-failure
+User=kudu
+
+[Install]
+WantedBy=multi-user.target
+

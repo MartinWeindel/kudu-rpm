@@ -1,0 +1,4 @@
+%preun
+
+systemctl stop kudu-master &>/dev/null || echo ""
+systemctl stop kudu-tserver &>/dev/null || echo ""
