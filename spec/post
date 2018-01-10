@@ -20,3 +20,4 @@ if [ ! -d /etc/kudu/conf ]; then
   fi
 fi
 
+systemctl daemon-reload
