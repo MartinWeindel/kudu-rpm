@@ -5,10 +5,10 @@ Name: kudu
 Summary: Apache Kudu: A columnar storage manager developed for the Apache Hadoop platform.
 
 # The version of your package
-Version: 1.6.0
+Version: 1.7.0
 
 # The release number of your package
-Release: 2
+Release: 1
 
 # Any license you wish to list
 License: Apache License 2.0
