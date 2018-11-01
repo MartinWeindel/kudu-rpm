@@ -1,8 +1,8 @@
-FROM usuresearch/apache-kudu:1.7.1
+FROM usuresearch/apache-kudu:1.8.0
 
 LABEL maintainer="martin.weindel@gmail.com"
 
-ENV KUDU_VERSION 1.7.1
+ENV KUDU_VERSION 1.8.0
 
 RUN yum -y install epel-release && \
     yum -y install python-sqlobject && \
@@ -23,10 +23,10 @@ RUN togo configure -n "Martin Weindel" -e "martin.weindel@gmail.com" && \
     mkdir -p root/usr/lib/systemd/system/
 
 RUN cd /tmp/${RPM_NAME} && \
-    cp -a /app/kudu root/usr/lib/kudu/bin && \
-    cp -a /app/kudu-master root/usr/lib/kudu/sbin && \
-    cp -a /app/kudu-tserver root/usr/lib/kudu/sbin && \
-    cp -aR /app/www root/usr/lib/kudu
+    cp -a /opt/kudu/kudu root/usr/lib/kudu/bin && \
+    cp -a /opt/kudu/kudu-master root/usr/lib/kudu/sbin && \
+    cp -a /opt/kudu/kudu-tserver root/usr/lib/kudu/sbin && \
+    cp -aR /opt/kudu/www root/usr/lib/kudu
 
     
 ADD doc/* /tmp/${RPM_NAME}/root/usr/share/doc/kudu-${KUDU_VERSION}/
