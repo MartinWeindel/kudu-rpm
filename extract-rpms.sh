@@ -2,7 +2,7 @@
 
 docker build . -t kudu-rpm
 
-KUDU_VERSION=1.8.0
+KUDU_VERSION=1.9.0
 RELEASE=1
 
 KUDU_RPM=kudu-${KUDU_VERSION}-${RELEASE}.x86_64.rpm

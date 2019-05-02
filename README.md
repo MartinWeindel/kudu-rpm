@@ -3,7 +3,7 @@ Building & providing RPM binary packages for Apache Kudu on CentOS 7.
 
 # Installation of Apache Kudu
 ## Download
-The latest RPM package is available from the [download page](https://github.com/MartinWeindel/kudu-rpm/wiki/Download).
+The latest RPM package is available from the [release page](https://github.com/MartinWeindel/kudu-rpm/releases).
 
 ## Prerequisites
 - CentOS 7
@@ -22,13 +22,13 @@ line to `/etc/kudu/conf/master.gflagfile` and `/etc/kudu/conf/tserver.gflagfile`
 
 ### Installation of RPM package
 ```
-yum install https://github.com/MartinWeindel/kudu-rpm/releases/download/v1.8.0-1/kudu-1.8.0-1.x86_64.rpm
+yum install https://github.com/MartinWeindel/kudu-rpm/releases/download/v1.9.0-1/kudu-1.9.0-1.x86_64.rpm
 ```
 
 ### Updating from older version
 ```
 yum erase kudu
-yum install https://github.com/MartinWeindel/kudu-rpm/releases/download/v1.8.0-1/kudu-1.8.0-1.x86_64.rpm
+yum install https://github.com/MartinWeindel/kudu-rpm/releases/download/v1.9.0-1/kudu-1.9.0-1.x86_64.rpm
 ```
 
 ### Running master server as service
@@ -50,7 +50,7 @@ systemctl enable kudu-tserver
 ```
 
 # Building the RPM package
-The build process uses the Apache Kudu binaries built with the docker image `usuresearch/apache-kudu`
+The build process uses the Apache Kudu binaries built with the docker image `mweindel/apache-kudu`
 and creates a RPM package containing kudu client, kudu-master and kudu-tserver.
 
 After checking out this project, just run
@@ -59,7 +59,7 @@ After checking out this project, just run
 ```
 
 ## Updating to new version
-- build docker image `usuresearch/apache-kudu`
+- build docker image `mweindel/apache-kudu`
 - adjust versions in `README.md`, `extract-rpms.sh`, `Dockerfile`, and `spec/header`
 - commit and release
 
