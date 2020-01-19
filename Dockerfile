@@ -1,13 +1,13 @@
-FROM mweindel/apache-kudu:1.10.0
+FROM mweindel/apache-kudu:1.11.1
 
 LABEL maintainer="martin.weindel@gmail.com"
 
-ENV KUDU_VERSION 1.10.0
+ENV KUDU_VERSION 1.11.1
 
 RUN yum -y install epel-release && \
     yum -y install python-sqlobject && \
     yum -y install https://github.com/genereese/togo/releases/download/v2.4r1/togo-2.4-1.noarch.rpm
-    
+
 ENV RPM_NAME kudu
 
 RUN togo configure -n "Martin Weindel" -e "martin.weindel@gmail.com" && \
@@ -28,7 +28,7 @@ RUN cd /tmp/${RPM_NAME} && \
     cp -a /opt/kudu/kudu-tserver root/usr/lib/kudu/sbin && \
     cp -aR /opt/kudu/www root/usr/lib/kudu
 
-    
+
 ADD doc/* /tmp/${RPM_NAME}/root/usr/share/doc/kudu-${KUDU_VERSION}/
 
 ADD sbin/* /tmp/${RPM_NAME}/root/usr/sbin/
@@ -46,10 +46,10 @@ RUN cd /tmp/${RPM_NAME} && \
     togo file exclude root/usr/bin && \
     togo file exclude root/usr/share/doc && \
     togo file exclude root/etc/kudu
-    
+
 ADD spec/* /tmp/${RPM_NAME}/spec/
-    
+
 RUN cd /tmp/${RPM_NAME} && \
     togo build package    
-    
+
 

@@ -22,13 +22,13 @@ line to `/etc/kudu/conf/master.gflagfile` and `/etc/kudu/conf/tserver.gflagfile`
 
 ### Installation of RPM package
 ```
-yum install https://github.com/MartinWeindel/kudu-rpm/releases/download/v1.10.0-1/kudu-1.10.0-1.x86_64.rpm
+yum install https://github.com/MartinWeindel/kudu-rpm/releases/download/v1.11.1-1/kudu-1.11.1-1.x86_64.rpm
 ```
 
 ### Updating from older version
 ```
 yum erase kudu
-yum install https://github.com/MartinWeindel/kudu-rpm/releases/download/v1.10.0-1/kudu-1.10.0-1.x86_64.rpm
+yum install https://github.com/MartinWeindel/kudu-rpm/releases/download/v1.11.1-1/kudu-1.11.1-1.x86_64.rpm
 ```
 
 ### Running master server as service
