@@ -1,8 +1,8 @@
-FROM mweindel/apache-kudu:1.12.0
+FROM mweindel/apache-kudu:1.15.0
 
 LABEL maintainer="martin.weindel@gmail.com"
 
-ENV KUDU_VERSION 1.12.0
+ENV KUDU_VERSION 1.15.0
 
 RUN yum -y install epel-release && \
     yum -y install python-sqlobject && \
